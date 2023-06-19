@@ -21,6 +21,9 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void UpdateLogic(float deltaTime)
     {
-        Debug.Log($"Updating logic");
+        if (playerStateMachine.inputHandler._position != Vector2.zero)
+        {
+            playerStateMachine.ChangeState(new PlayerWalkState(playerStateMachine));
+        }
     }
 }

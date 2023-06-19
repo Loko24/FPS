@@ -1,9 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using static PlayerControl;
 
-public class InputHandler : MonoBehaviour
+public class InputHandler : MonoBehaviour, IPlayerActions
 {
+    private PlayerControl _playerControl;
+    public Vector2 _position { get; private set; }
+
+    private void Awake()
+    {
+        _playerControl = new PlayerControl();
+        _playerControl.Player.SetCallbacks(this);
+    }
+
+    private void OnEnable()
+    {
+        _playerControl.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _playerControl.Disable();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +34,9 @@ public class InputHandler : MonoBehaviour
     void Update()
     {
         
+    }
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        _position = context.ReadValue<Vector2>();
     }
 }

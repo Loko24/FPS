@@ -5,6 +5,17 @@ using UnityEngine;
 
 public class PlayerStateMachine : StateMachine
 {
+    public InputHandler inputHandler { get; private set; }
+    public CharacterController characterController { get; private set; }
+
+    public float moveSpeed = 5f;
+
+    private void Awake()
+    {
+        inputHandler = GetComponent<InputHandler>();
+        characterController = GetComponent<CharacterController>();
+    }
+
     private void Start()
     {
         InitializeStateMachine();
