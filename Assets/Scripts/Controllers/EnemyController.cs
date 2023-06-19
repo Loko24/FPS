@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour, IEnemy
     // Start is called before the first frame update
     void Start()
     {
+        _enemy = FindAnyObjectByType<Enemy>();
         _enemy.Life = _health;
         _enemy.RespawnDelay = _respawnDelay;
     }

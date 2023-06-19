@@ -21,6 +21,7 @@ public class WeaponController : MonoBehaviour, IWeapon
     // Start is called before the first frame update
     void Start()
     {
+        _weapon = FindAnyObjectByType<Weapon>();
         _weapon.Name = _name;
         _weapon.Damage = _damage;
         _weapon.BulletQuantity = _bulletQuantity;
