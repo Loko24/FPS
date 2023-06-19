@@ -9,6 +9,7 @@ public class PlayerStateMachine : StateMachine
     public CharacterController characterController { get; private set; }
 
     public float moveSpeed = 5f;
+    public float rotationSpeed = 5f;
 
     private void Awake()
     {

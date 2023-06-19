@@ -39,4 +39,9 @@ public class InputHandler : MonoBehaviour, IPlayerActions
     {
         _position = context.ReadValue<Vector2>();
     }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        
+    }
 }

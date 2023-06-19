@@ -49,4 +49,9 @@ public class PlayerController : MonoBehaviour, IPlayerActions
     {
         _position = context.ReadValue<Vector2>();
     }
+
+    public void OnLook(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
+    }
 }
